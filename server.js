@@ -24,7 +24,9 @@ app.use((req, res, next) => {
 app.use("/api/workouts", workoutRoutes); // is when a fire request to thses /workout.js that get workouts
 app.use("/api/user", userRoutes);
 /////// connect to db
-
+app.get("/", (req, res) => {
+  res.send(console.log("happy learning"));
+});
 mongoose
   .connect(process.env.MONGO_URI) // listening starts once databse is connectrf
   .then(() => {
